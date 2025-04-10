@@ -23,7 +23,7 @@ const ReviewsHistoryItem = () => {
                 </Box>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Button text="Přejít k ubytování" path="#" />
+                <Button text="Přejít k ubytování" path="/stayOfferDetail" />
             </Box>
         </Box>
     );

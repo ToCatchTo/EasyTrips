@@ -21,7 +21,9 @@ const Homepage: NextPage = () => {
         <Destinations />
       </Box>
       <Reviews />
-      <Benefits />
+      <Box sx={{ padding: '0px 100px' }}>
+        <Benefits />
+      </Box>
       <Footer />
     </Box>
   );

@@ -9,7 +9,7 @@ const StaysFilter = () => {
     const [city, setCity] = React.useState('');
 
     return (
-        <Box sx={{ backgroundColor: colors.primary, borderRadius: '20px', height: '25vh', color: colors.textReverse, padding: '20px', width: 'calc(60% - 40px)', boxShadow: '8px 8px 5px #E9E9AF', margin: '100px auto 0px auto' }}>
+        <Box sx={{ backgroundColor: colors.primary, borderRadius: '20px', height: 'auto', color: colors.textReverse, padding: '20px', width: 'calc(60% - 40px)', boxShadow: '8px 8px 5px #E9E9AF', margin: '100px auto 0px auto' }}>
             <Box sx={{ backgroundColor: colors.componentBackground, borderRadius: '20px', height: 'calc(100% - 40px)', color: colors.textReverse, padding: '20px', width: 'calc(100% - 40px)' }}>
                 <Box sx={{ display: 'flex', flexDirection: 'row', height: '100%', gap: '20px' }}>
                     {/* Price Fields */}

@@ -26,7 +26,7 @@ const ExperienceOffersItem = () => {
                 </Box>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Button text="Prohlédnout" path="#" />
+                <Button text="Prohlédnout" path="/experienceOfferDetail" />
             </Box>
         </Box>
     );

@@ -30,7 +30,7 @@ const StaysOffersItem = () => {
                 </Box>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Button text="Prohlédnout" path="#" />
+                <Button text="Prohlédnout" path="/stayOfferDetail" />
             </Box>
         </Box>
     );
