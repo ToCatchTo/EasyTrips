@@ -17,6 +17,7 @@ const Login: NextPage = () => {
         <Box>
             <NavBar />
             <LoginForm />
+            <Footer />
         </Box>
     );
 }

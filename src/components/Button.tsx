@@ -8,12 +8,14 @@ interface ButtonProps {
     path: string;
     fontSizeParam?: number;
     bgColor?: string;
+    buttonType?: string;
+    onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, path, fontSizeParam, bgColor }) => {
+const Button: React.FC<ButtonProps> = ({ text, path, fontSizeParam, bgColor, onClick, buttonType }) => {
     return (
-        <Link href={path} style={{ textDecoration: 'none' }}>
-            <Box sx={{ color: colors.text, fontWeight: 'bold', fontSize: fontSizeParam ? fontSizeParam + 'px' : '20px', backgroundColor: bgColor ? bgColor : colors.secondary, padding: '15px 20px', borderRadius: '10px', '&:hover': { backgroundColor: colors.secondaryDarker }, transition: '0.2s ease-in-out', textWrap: 'nowrap' }}>
+        <Link href={path} style={{ textDecoration: 'none' }} type={buttonType}>
+            <Box onClick={onClick} sx={{ color: colors.text, fontWeight: 'bold', fontSize: fontSizeParam ? fontSizeParam + 'px' : '20px', backgroundColor: bgColor ? bgColor : colors.secondary, padding: '15px 20px', borderRadius: '10px', '&:hover': { backgroundColor: colors.secondaryDarker }, transition: '0.2s ease-in-out', textWrap: 'nowrap', textAlign: 'center' }}>
                 {text}
             </Box>
         </Link>

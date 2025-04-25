@@ -18,6 +18,7 @@ const Register: NextPage = () => {
         <Box>
             <NavBar />
             <RegisterForm />
+            <Footer />
         </Box>
     );
 }

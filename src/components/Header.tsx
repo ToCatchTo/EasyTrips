@@ -2,6 +2,7 @@ import { colors } from "@/variables/globalVariables";
 import { Box, TextField, Typography } from "@mui/material";
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
+import Button from "./Button";
 
 const Header = () => {
     return (
@@ -11,9 +12,12 @@ const Header = () => {
                 <Typography sx={{ color: colors.text, fontSize: '64px', fontWeight: 'bold' }}>Najděte své další dobrodružství snadno</Typography>
                 <Typography sx={{ color: colors.text, fontSize: '24px', fontStyle: 'italic' }}>Prohlédněte si tisíce zážitků a ubytování šitých na míru právě vám</Typography>
             </Box>
-            <Box sx={{ backgroundColor: colors.background, height: '75px', width: '50%', borderRadius: '20px', padding: '0px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            {/* <Box sx={{ backgroundColor: colors.background, height: '75px', width: '50%', borderRadius: '20px', padding: '0px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 Řím, New York, Tokyo, ...
                 <SearchRoundedIcon />
+            </Box> */}
+            <Box sx={{ width: '30%' }}>
+                <Button text="ZAPOČNĚTE SVOJÍ CESTU" path="/staysList" />
             </Box>
             <Box sx={{ display: 'flex', gap: '30px', alignItems: 'center' }}>
                 <Typography sx={{ color: colors.text, fontWeight: 'bold' }}> Přes 10 000 000 spokojených zákazníků</Typography>

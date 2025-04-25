@@ -7,7 +7,7 @@ import StaysOffersList from "@/components/StaysOffersList";
 import { Box } from "@mui/material";
 import { NextPage } from "next";
 
-const ExperienceList: NextPage = () => {
+const ExperienceListPage: NextPage = () => {
     return (
         <Box>
             <NavBar />
@@ -20,4 +20,4 @@ const ExperienceList: NextPage = () => {
     );
 }
 
-export default ExperienceList;
+export default ExperienceListPage;
