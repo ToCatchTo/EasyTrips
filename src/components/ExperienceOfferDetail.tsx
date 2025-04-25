@@ -26,6 +26,7 @@ const ExperienceOfferDetail = () => {
   const [refreshTrigger, setRefreshTrigger] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [reviewsPerPage] = useState(4);
+  const isLoggedIn = localStorage.getItem('loginState');
 
   const handleUpdate = () => {
     setRefreshTrigger(prev => prev + 1);
@@ -83,7 +84,7 @@ const ExperienceOfferDetail = () => {
             </Box>
           </Box>
           <Box>
-            <Button text="Zarezervovat" path={`/experienceReservation?id=${experienceId}`} />
+            {isLoggedIn === 'true' ? (<Button text="Zarezervovat" path={`/experienceReservation?id=${experienceId}`} />) : (<></>)}
           </Box>
         </Box>
 
@@ -109,9 +110,7 @@ const ExperienceOfferDetail = () => {
           onChange={handlePageChange}
         />
 
-        {offer && experienceId && (
-          <ReviewForm header={offer.activityName} offerId={experienceId} updateAction={handleUpdate} />
-        )}
+        {isLoggedIn === 'true' && offer && experienceId && (<ReviewForm header={offer.activityName} offerId={experienceId} updateAction={handleUpdate} />)}
       </Box>
     </Box>
   );

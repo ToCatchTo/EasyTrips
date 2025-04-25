@@ -26,6 +26,7 @@ const StayOfferDetail = () => {
     const [refreshTrigger, setRefreshTrigger] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
     const [reviewsPerPage] = useState(4);
+    const isLoggedIn = localStorage.getItem('loginState');
 
     const handleUpdate = () => {
         setRefreshTrigger(prev => prev + 1);
@@ -87,7 +88,7 @@ const StayOfferDetail = () => {
                         </Box>
                     </Box>
                     <Box>
-                        <Button text="Zarezervovat" path={`/stayReservation?id=${stayId}`} />
+                        {isLoggedIn === 'true' ? (<Button text="Zarezervovat" path={`/stayReservation?id=${stayId}`} />) : (<></>)}
                     </Box>
                 </Box>
 
@@ -112,10 +113,7 @@ const StayOfferDetail = () => {
                     page={currentPage}
                     onChange={handlePageChange}
                 />
-
-                {offer && stayId && (
-                    <ReviewForm header={offer.location} offerId={stayId} updateAction={handleUpdate} />
-                )}
+                {isLoggedIn === 'true' && offer && stayId && (<ReviewForm header={offer.location} offerId={stayId} updateAction={handleUpdate} />)}
             </Box>
         </Box>
     );
