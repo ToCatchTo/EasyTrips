@@ -14,6 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs" className={lato.variable}>
+      <head>
+        <title>EasyTrips</title>
+      </head>
       <body style={{ fontFamily: 'var(--font-lato)', backgroundColor: '#F5F5DC', margin: '0px' }}>
         {children}
       </body>
