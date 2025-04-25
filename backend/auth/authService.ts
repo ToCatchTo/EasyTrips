@@ -32,12 +32,14 @@ export const registerUser = async (email: string, password: string): Promise<any
 export const loginUser = async (email: string, password: string): Promise<any> => {
     try {
         await signInWithEmailAndPassword(auth, email, password);
-        localStorage.setItem('loginState', JSON.stringify(true));
-        localStorage.setItem('currentUserEmail', JSON.stringify(email));
-        const emailQuery = query(collection(db, 'users'), where('email', '==', (localStorage.getItem('currentUserEmail') ?? "").slice(1, -1)));
-        const querySnapshot = await getDocs(emailQuery);
-        const currentUser = querySnapshot.docs.map((doc) => doc.data());
-        localStorage.setItem('isMiddleman', JSON.stringify(currentUser[0].isMiddleman));
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('loginState', JSON.stringify(true));
+            localStorage.setItem('currentUserEmail', JSON.stringify(email));
+            const emailQuery = query(collection(db, 'users'), where('email', '==', (localStorage.getItem('currentUserEmail') ?? "").slice(1, -1)));
+            const querySnapshot = await getDocs(emailQuery);
+            const currentUser = querySnapshot.docs.map((doc) => doc.data());
+            localStorage.setItem('isMiddleman', JSON.stringify(currentUser[0].isMiddleman));
+        }
         return true;
     } catch (error: any) {
         switch (error.code) {
@@ -63,9 +65,11 @@ export const loginUser = async (email: string, password: string): Promise<any> =
 export const logoutUser = async () => {
     try {
         await auth.signOut();
-        localStorage.setItem('loginState', JSON.stringify(false));
-        localStorage.setItem('isMiddleman', JSON.stringify(false));
-        localStorage.setItem('currentUserEmail', JSON.stringify(null));
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('loginState', JSON.stringify(false));
+            localStorage.setItem('isMiddleman', JSON.stringify(false));
+            localStorage.setItem('currentUserEmail', JSON.stringify(null));
+        }
         return true;
     } catch (error: any) {
         alert("Chyba při odhlašování. Zkuste to znovu později.");

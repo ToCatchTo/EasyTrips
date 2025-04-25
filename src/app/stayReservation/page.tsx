@@ -3,12 +3,15 @@ import NavBar from "@/components/NavBar";
 import StayReservationForm from "@/components/StayReservationForm";
 import { Box } from "@mui/material";
 import { NextPage } from "next";
+import { Suspense } from "react";
 
 const StayReservation: NextPage = () => {
     return (
         <Box>
             <NavBar />
-            <StayReservationForm />
+            <Suspense>
+                <StayReservationForm />
+            </Suspense>
             <Footer />
         </Box>
     );

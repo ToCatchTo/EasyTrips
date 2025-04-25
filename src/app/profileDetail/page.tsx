@@ -15,7 +15,11 @@ import StaysList from "@/components/StaysList";
 import ExperienceList from "@/components/ExperienceList";
 
 const ProfileDetail: NextPage = () => {
-    let isUserMiddleman = (localStorage.getItem('isMiddleman') ?? "").slice(1, -1) === 'true';
+    let isUserMiddleman: boolean = false;
+
+    if (typeof window !== 'undefined') {
+        isUserMiddleman = (localStorage.getItem('isMiddleman') ?? "").slice(1, -1) === 'true';
+    }
 
     return (
         <Box>

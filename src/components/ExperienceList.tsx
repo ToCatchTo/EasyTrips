@@ -1,3 +1,4 @@
+'use client';
 import { colors } from "@/variables/globalVariables";
 import { Box, Modal, Pagination, TextField, Typography } from "@mui/material";
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
